@@ -1,5 +1,5 @@
 # Avoiding Common Attacks
-This is a discussion of a few of the common attacks I designed this contract to defend against, and how this was done.
+This is a discussion of a few common smart contract attacks how this contract attempts to mitigate them.
 
 ## Recursive Calls and Re-entrancy
 I have avoided all external contract calls with the exception of the transfer() function. When the transfer function is used, all essential logic, with the exception of return statements, are completed before the transfer(). Additionally, the transfer() function is never used in a situation where an out-of-gas exception from the receiving address's fallback function would impact the logic of the QuadraticVoting contract (i.e. no looping over payment lists, etc.). If the transfer function fails, the voter's commitment has already been deleted and can not be revealed again. The major contract logic has also been limited to the QuadraticVoting.sol contract. While this makes for a long contract, it allows cross-contract calls to be avoided and prevents any confusion with multiple inheritance.
