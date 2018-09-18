@@ -6,8 +6,8 @@
 2. ```npm install -g ganache-cli```
 
 ### Once truffle and ganache-cli are installed, run:
-1. `git clone https://github.com/nward13/QuadraticVoting.git`
-2. `cd ./QuadraticVoting`
+1. `git clone https://github.com/nward13/QuadraticVotingDapp.git`
+2. `cd ./QuadraticVotingDapp`
 3. `npm install`
 
 ## To run tests:
